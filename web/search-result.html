@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="网上预约挂号系统">
+    <meta name="keywords" content="网上挂号">
+    <title>按医院预约 | 猎豹挂号网</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/search-result.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link href="./images/favicon.ico" rel="shortcut icon" />
+</head>
+
+<body>
+<!--顶部-->
+<script src="base/head.html"></script>
+<div class ="container">
+    <!--城市切换选择-->
+
+    <div class="row" id="tip">
+        共找到<mark id="number"></mark>家医院
+    </div>
+    <HR style="border:1px  " color="blue" width="100%" SIZE=2>
+    <!--医院查询结果-->
+    <div class="result">
+        <div class="hospital-tabs">
+            <div id="no-result" style="display: none"></div>
+            <div id="5" class="row hospital-box">
+                <div class="col-xs-12 col-md-3 img" >
+                    <img title="北京解放军总医院" alt="北京解放军总医院" src="./images/hot-hospital3.jpg" class="img-thumbnail">
+                </div>
+                <div class="col-xs-8 col-md-5 message">
+                    <a class="hospital-name" title="北京解放军总医院"  href="" ></a>
+                    <span class="ss"></span>
+                    <!--<p class="hospital-information"><span class="glyphicon glyphicon-earphone"></span><span class = "tel">  010-69156114 </span></p>-->
+                    <p class="hospital-information"><span class="glyphicon glyphicon-map-marker"></span><span class ="address">  北京市东城区东单北大街53号 </span></p>
+                </div>
+                <div class ="col-xs-3 col-md-1 order col-md-offset-3">
+                    <a class="butn"><button type="button" class="btn btn-primary">挂号</button></a>
+                </div>
+            </div>
+        </div>
+        <nav class="row page">
+            <ur class="col-xs-2 col-md-4"></ur>
+            <ul class="col-xs-8 col-md-4 pagination" id="page-number">
+                <li><a href="#">&laquo;</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&raquo;</a></li>
+            </ul>
+            <ur class="col-xs-2 col-md-4"></ur>
+        </nav>
+    </div>
+</div>
+
+
+
+<!--底部-->
+<script src="base/foot.html"></script>
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script src="js/login.js"></script>
+<script src="js/app.js"></script>
+<script type="text/javascript" src="js/search-result.js"></script>
+<script type="text/javascript" src="js/jquery.form.js"></script>
+
+</body>
+</html>
+

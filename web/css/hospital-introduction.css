@@ -1,0 +1,193 @@
+body,p,h1,h2,h3,h4,h5,a{
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif !important;
+}
+i{font-style:normal;}
+.position {
+    margin-top:20px;
+}
+.position span{
+    font-weight: bold;
+    text-decoration:none;
+    color:#269abc ;
+    margin:10px 0;
+    font-size: 0.9em;
+}
+.position span  :hover{
+    text-decoration: none;
+}
+.main {
+    margin-top:10px;
+}
+.main h1 {
+    font-size:24px;
+}
+.main .rank{
+    background-color:#FFDCB9 ;
+    color:#EA7500 ;
+    padding:3px 10px;
+    font-size: 12px;
+    margin-left: 20px;
+}
+.main h1 ,span {
+    display:inline;
+}
+.main .principal {
+    margin-top:10px;
+    border: 1px solid #d5d5d5;
+    padding:8px;
+}
+.main .principal .imagine img{
+    height: 180px;
+    width:100%;
+}
+.main .principal .hospital-p {
+    margin:10px 10px 0 0;
+}
+.main .principal .hospital-p  .in{
+    color:#737373;
+    font-weight: 700;
+}
+.main .principal .hospital-p  .hospital-url{
+    text-decoration: underline;
+    color:#269abc;
+}
+.main .appointment h2{
+    margin-left:20px;
+    color:#269abc;
+    font-size:1.3em;
+}
+.main .appointment {
+    border:1px solid #d5d5d5;
+    margin-top:20px;
+}
+.main .appointment  p {
+    margin: 10px 10px 0 20px;
+}
+.main .appointment .prefix {
+    color:#737373;
+    font-weight: 700;
+}
+.department .classify label{
+    padding:  9px 0 9px;
+    margin:0;
+    text-align: center;
+    background-color: #eee;
+    float:left;
+    width:120px;
+}
+@media (min-width:768px){
+    .department .classify label{
+        border-right:1px solid #ddd;
+        border-bottom:1px solid #ddd;
+    }
+}
+.department .classify label a {
+    color: #888;
+    font-size: 16px;
+    font-weight: normal;
+}
+.department .classify a:hover{
+    text-decoration: none;
+}
+.department .classify p {
+    margin:0;
+    padding: 0;
+    border-bottom: 1px solid #ddd;
+}
+@media (max-width:768px){
+    .department .classify p{
+        width:350px;
+    }
+}
+.department .classify span {
+    display:block ;
+    width: 100px;
+    padding: 10px 10px;
+    float:left;
+    text-align: center;
+    font-size: 14px;
+}
+@media (min-width:768px){
+    .department .classify span {
+        width: 90px;
+    }
+}
+.department .classify span:hover{
+    background: #D1E9E9;
+}
+.department-title h3 {
+    color:#fff;
+    border-bottom:1px solid #ddd;
+    padding: 10px 15px;
+    margin:0;
+    font-size:16px;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif;
+}
+@media (min-width: 768px) {
+    .department-title h3 {
+        font-size:18px;
+    }
+}
+.department-title {
+    background-color:#009e9e;
+}
+
+
+.introduce {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height:244px;
+    border:1px solid #ddd;
+    margin-top:20px;
+}
+@media (min-width: 768px) {
+    .introduce {
+        height:164px;
+    }
+}
+.intro-title h3 {
+    color:#fff;
+    border-bottom:1px solid #ddd;
+    padding: 10px 15px;
+    margin:0;
+    font-size:16px;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif;
+}
+@media (min-width: 768px) {
+    .intro-title h3 {
+        font-size:18px;
+    }
+}
+.intro-title {
+    background-color:#1a8fb4;
+}
+.intro-content ul {
+    list-style-type: none;
+    padding:0;
+    margin:0;
+}
+.intro-content li {
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif;
+    font-size:14px;
+    line-height: 40px;
+    border-bottom:1px solid #ddd;
+    padding: 0;
+}
+.intro-content li>span {
+    display:block;
+    float:left;
+    width:80px;
+    height: 40px;
+    text-align: center;
+    margin-right:15px;
+    border-right:1px solid #ddd;
+    font-weight: bold;
+}
+.intro-content li:hover{
+    background-color: #d9edf7;
+}
+@media (min-width: 768px) {
+    .right-li>span {
+        border-left:1px solid #ddd;
+    }
+}

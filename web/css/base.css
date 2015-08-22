@@ -1,0 +1,205 @@
+@charset "UTF-8";
+
+body {
+    padding:0;
+}
+
+/*--登录--*/
+.modal-content {
+    margin-top: 70px;
+}
+@media (min-width: 768px) {
+    .modal-content {
+        height: 285px;
+        width:350px !important;
+        left: 50%;
+        top: 50%;
+        margin-top: 155px;
+        margin-left: -175px;
+    }
+}
+.modal-header {
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif ;
+    border-bottom:1px solid #4cae4c!important;
+    height: 55px;
+}
+.login-body {
+    padding:15px 20px 10px!important;
+}
+.login-body ul{
+    padding: 0;
+    list-style-type: none;
+}
+.login-body input {
+    border-radius: 4px;
+}
+.login-body .btn {
+    border-radius: 2px;
+    transition: all 0.15s ease-in-out;
+}
+.btn-area {
+    padding-bottom: 20px;
+}
+.btn-area .btn{
+    color:#fff;
+    font-size:14px;
+    margin-top: 25px;
+    background-color: #377bee;
+    border: none;
+}
+.btn-area p {
+    float:right;
+    margin-top: 5px;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif ;
+}
+.btn-area p>a{
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif ;
+}
+.input-group-addon {
+    background-color: #fff!important;
+    border-top-left-radius: 4px !important;
+    border-bottom-left-radius: 4px !important;
+}
+.modal-title {
+    width:100px!important;
+    float:left;
+}
+#login-warning {
+    color:red;
+    padding-top: 3px;
+    margin:0;
+}
+#login-title {
+    width: 60px!important;
+}
+
+/*--顶部主体--*/
+.head-body {
+    min-height: 240px;
+    width: 100%;
+    background-color: #66B3FF;
+    background-image: url("../images/head-body-background.png");
+    background-position: center;
+    background-size: cover;
+    padding-top: 40px;
+}
+@media (min-width: 768px) {
+    .head-body {
+        padding-top: 65px;
+    }
+}
+.head-body h1>a {
+    color: #FFF;
+    margin: 0 10px;
+    padding: 20px 0 0;
+    font-size: 26px;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif;
+}
+.head-body h1>a:hover {
+    text-decoration: none;
+}
+@media (min-width: 768px) {
+    .head-body h1>a {
+        font-size: 34px;
+    }
+}
+.head-body-logo {
+    width:100px;
+    float:left;
+    margin-right:10px;
+}
+.head-search {
+    padding-top: 35px;
+}
+@media (min-width: 768px) {
+    .head-search {
+        padding-top: 25px;
+    }
+}
+.head-search input {
+    height:36px;
+    border:1px solid #fff !important;
+}
+.head-search .input-group-addon{
+    border:1px solid #fff !important;
+    border-right:1px solid #ccc !important;
+}
+.head-search  .btn {
+    width: 80px;
+    background-color:rgba(0, 0, 0, 0.1) !important;
+    color:#fff!important;
+    transition: all 0.2s ease-in-out;
+    border:1px solid #fff !important;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif !important;
+    font-size:16px;
+ }
+.head-search .btn:hover {
+    background-color: #fff!important;
+    color:#66B3FF!important;
+}
+
+/*--顶部导航--*/
+.head-nav {
+    margin-top:40px;
+    background-color:rgba(0, 0, 0, 0.3);
+}
+@media (min-width: 768px) {
+    .head-nav {
+        margin-top:70px;
+    }
+}
+.head-nav a {
+    margin-left: 0;
+    color: #fff;
+    transition: all 0.15s ease-in-out;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif;
+    text-align:center;
+}
+.head-nav a:hover {
+    color:#fff;
+    background-color:rgba(0, 0, 0, 0.3) !important;
+}
+.head-nav .icon-bar{
+    background-color:#fff;
+}
+
+
+/*--底部--*/
+.foot {
+    min-height: 140px;
+    background-color: #333;
+    padding-top: 20px;
+    margin-top:40px;
+}
+.foot p {
+    text-align: center;
+    color: #bac1c8;
+    font-size:16px;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif !important;
+}
+.foot ul {
+    text-align: center;
+    padding:0;
+    margin-top:15px;
+}
+.foot li {
+    display:inline;
+    color: #bac1c8;
+    padding-left: 5px;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif !important;
+}
+.foot li a{
+    color: #bac1c8;
+    transition: all 0.2s ease-in-out;
+    font-size:16px;
+}
+.foot li a:hover{
+    color: #5adae2;
+    text-decoration: none;
+}
+.foot img {
+    width:180px;
+}
+.foot>.container-fluid>.col-md-1 {
+    text-align: center;
+}

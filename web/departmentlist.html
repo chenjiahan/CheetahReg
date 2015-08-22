@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="网上预约挂号系统">
+    <meta name="keywords" content="网上挂号">
+    <title>按科室预约 | 猎豹挂号网</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/departmentlist.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link href="./images/favicon.ico" rel="shortcut icon" /> 
+<script     >   
+function nTabs(thisObj,Num){   
+            if(thisObj.className == "active")return;
+            var tabObj = thisObj.parentNode.id;
+            var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+            for(i=0; i <tabList.length; i++){   
+                        if (i == Num){   
+                                thisObj.className = "active";
+                                document.getElementById(tabObj+i).className = "";   
+                        }else{  tabList[i].className = "normal"; 
+                                document.getElementById(tabObj+i).className = "none";   
+                        }   
+            }   
+}   
+</script>   
+</head>
+
+<body>
+    <!--顶部及导航条-->
+    <script src="base/head.html"></script>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-xs-12 my-container menu" >
+                <h2><span class="glyphicon glyphicon-folder-open" style="color:#00AEAE; font-size: 15px;"></span>    科室目录</h2>
+                <ul id="menu">
+                    <li class="col-xs-12 active" onmouseover="nTabs(this,0);"><a href="#" class="normal">内科<span>Internal Medicine</span></a></li> 
+                    <li class="col-xs-12 normal" onmouseover="nTabs(this,1);"><a href="#" class="normal">外科<span>Surgial</span></a></li> 
+                    <li class="col-xs-12 normal" onmouseover="nTabs(this,2);"><a href="#" class="normal">骨科<span>Orthopedics</span></a></li> 
+                    <li class="col-xs-12 normal" onmouseover="nTabs(this,3);"><a href="#"class="normal">妇产科<span>Obstetrics and Gynecology</span></a></li> 
+                    <li class="col-xs-12 normal" onmouseover="nTabs(this,4);"><a href="#"class="normal">儿科<span>Pediatrics</span></a></li> 
+                    <li class="col-xs-12 normal" onmouseover="nTabs(this,5);"><a href="#"class="normal">眼科<span>Ophthalmology</span></a></li> 
+                    <li class="col-xs-12 normal" onmouseover="nTabs(this,6);"><a href="#"class="normal">耳鼻喉头颈科<span>ENT</span></a></li> 
+                    <li class="col-xs-12 normal" onmouseover="nTabs(this,7);"><a href="#"class="normal">口腔科<span>Psychiatric</span></a></li> 
+                    <li class="col-xs-12 normal" onmouseover="nTabs(this,8);"><a href="#"class="normal">皮肤性病科<span>Dermatology</span></a></li> 
+                    <li class="col-xs-12 normal" onmouseover="nTabs(this,9);"><a href="#"class="normal">肿瘤科<span>Oncology</span></a></li>
+                    <li class="col-xs-12 normal" onmouseover="nTabs(this,10);"><a href="#"class="normal">麻醉科<span>Anesthesiology</span></a></li> 
+                    <li class="col-xs-12 normal" onmouseover="nTabs(this,11);"><a href="#"class="normal">疼痛科<span>Algology</span></a></li> 
+                    <li class="col-xs-12 normal" onmouseover="nTabs(this,12);"><a href="#"class="normal">医学影像科<span>Medical imaging</span></a></li> 
+                    <li class="col-xs-12 normal" onmouseover="nTabs(this,13);"><a href="#"class="normal">中医科<span>Chinese Medicine</span></a></li> 
+                    <li class="col-xs-12 normal" onmouseover="nTabs(this,14);"><a href="#"class="normal">其他<span>Others</span></a></li>
+                </ul>
+            </div>
+            <div class=" col-md-9 col-xs-12 my-container second_keshi" >
+                <div id="menu0">
+                    <h3><span class="glyphicon glyphicon-info-sign" style="color: #1a8fb4; font-size: 15px;"></span>  内科概述</h3>
+                    <div class="info">内科是其他临床医学的基础科，主要针对各种感染、各系统疾病、各种急性中毒、休克等。内科常见疾病有：高血压、糖尿病、冠心病、支气管炎等。内科可以分为以下几类：呼吸内科，消化内科，心血管内科，神经内科，内分泌科，血液内科等。</div>
+                    <h3><span class="glyphicon glyphicon-list" style="color: #1a8fb4; font-size: 15px;"></span>   内科二级科室</h3>
+                    <ul>
+                        
+                    </ul>
+                </div>
+                <div class="none" id="menu1">
+                    <h3><span class="glyphicon glyphicon-info-sign" style="color: #1a8fb4; font-size: 15px;"></span>  外科概述</h3>
+                    <div id="info1"class="info">    外科是研究外科疾病的发生，发展规律及其临床表现，诊断，预防和治疗的科学，是以手术切除、修补为主要治病手段的专业科室。外科疾病分为五大类：创伤，感染，肿瘤，畸形和功能障碍。</div>
+                    <h3><span class="glyphicon glyphicon-list" style="color: #1a8fb4; font-size: 15px;"></span>   外科二级科室</h3>
+                    <ul>
+                       
+                    </ul>
+                </div>
+                <div class="none" id="menu2">
+                    <h3><span class="glyphicon glyphicon-info-sign" style="color: #1a8fb4; font-size: 15px;"></span>  骨科概述</h3>
+                    <div id="info2"class="info">    骨科是各大医院最常见的科室之一，主要研究骨骼肌肉系统的解剖、生理与病理，运用药物、手术及物理方法保持和发展这一系统的正常形态与功能。现阶段，骨关节结核、骨髓炎、小儿麻痹症等疾病明显减少，交通事故引起的创伤明显增多。</div>
+                    <h3><span class="glyphicon glyphicon-list" style="color: #1a8fb4; font-size: 15px;"></span>   骨科二级科室</h3>
+                    <ul>
+                        
+                    </ul>
+                </div>
+                <div class="none" id="menu3">
+                    <h3><span class="glyphicon glyphicon-info-sign" style="color: #1a8fb4; font-size: 15px;"></span>  妇产科概述</h3>
+                    <div id="info"class="info">    妇产科是临床医学四大主要学科之一，主要研究女性生殖器官疾病的病因、病理、诊断及防治，妊娠、分娩的生理和病理变化，高危妊娠及难产的预防和诊治，女性生殖内分分泌，计划生育及妇女保健等。</div>
+                    <h3><span class="glyphicon glyphicon-list" style="color: #1a8fb4; font-size: 15px;"></span>   妇产科二级科室</h3>
+                    <ul>
+                       
+                    </ul>
+                </div>
+                <div class="none" id="menu4">
+                    <h3><span class="glyphicon glyphicon-info-sign" style="color: #1a8fb4; font-size: 15px;"></span>  儿科概述</h3>
+                    <div id="info"class="info">儿科是全面研究小儿时期身心发育、保健以及疾病防治的一门临床科学，它与许多临床及基础学科有着广泛联系。临床儿科学又包括儿童保健、新生儿、血液、心血管、呼吸、消化、肾脏、神经和传染等三级学科。</div>
+                    <h3><span class="glyphicon glyphicon-list" style="color: #1a8fb4; font-size: 15px;"></span>   儿科二级科室</h3>
+                    <ul>
+                       
+                    </ul>
+                </div>
+                <div class="none" id="menu5">
+                    <h3><span class="glyphicon glyphicon-info-sign" style="color: #1a8fb4; font-size: 15px;"></span>  眼科概述</h3>
+                    <div id="info" class="info">眼科的全称是“眼病专科”。眼科是研究发生在视觉系统，包括眼球及与其相关联的组织有关疾病的学科。 常见的眼科疾病有：中心浆液性视网膜病变、干眼症、交感性眼炎、夜盲症、失明、弱视、散光、沙眼、白内障、结膜炎、色盲、飞蚊症等 。</div>
+                    <h3><span class="glyphicon glyphicon-list" style="color: #1a8fb4; font-size: 15px;"></span>   眼科二级科室</h3>
+                    <ul>
+                        
+                    </ul>
+                </div>
+                <div class="none" id="menu6">
+                    <h3><span class="glyphicon glyphicon-info-sign" style="color: #1a8fb4; font-size: 15px;"></span>  耳鼻喉头颈科概述</h3>
+                    <div id="info" class="info">耳鼻喉头颈科主要针对以耳部、鼻部、咽喉、头颈部等疾病的诊断和治疗，常见疾病主要有，耳部疾病(中耳炎、耳鸣)，鼻部疾病(急性鼻炎、慢性鼻炎)，咽喉疾病(喉炎、慢性咽炎)，头颈部疾病(颅脑损失、头部肿瘤)。</div>
+                    <h3><span class="glyphicon glyphicon-list" style="color: #1a8fb4; font-size: 15px;"></span>   耳鼻喉头颈科二级科室</h3>
+                    <ul>
+                        
+                    </ul>
+                </div>
+                <div class="none" id="menu7">
+                    <h3><span class="glyphicon glyphicon-info-sign" style="color: #1a8fb4; font-size: 15px;"></span>  口腔科概述</h3>
+                    <div id="info" class="info">口腔科大分类主要从口腔疾病、牙齿、牙病变来归类，从这三个大类又可以分为口腔美容、种植牙、牙齿正畸、口腔溃疡、口腔炎症等等。主要口腔科疾病包括：口腔颌面部皮样、表皮颌下间隙感染、下颌后缩、四环素牙、舌白斑等疾病。</div>
+                    <h3><span class="glyphicon glyphicon-list" style="color: #1a8fb4; font-size: 15px;"></span>   口腔科二级科室</h3>
+                    <ul>
+                       
+                    </ul>
+                </div>
+                <div class="none" id="menu8">
+                    <h3><span class="glyphicon glyphicon-info-sign" style="color: #1a8fb4; font-size: 15px;"></span>  皮肤性病科概述</h3>
+                    <div id="info" class="info">皮肤性病科包含了皮肤科和性病科两个临床医学的重要内容。皮肤科、性病科的各种疾病常常是相伴发生，为了患者就诊和医生诊治的方便，现在各大医院都已开设了皮肤性病科。</div>
+                    <h3><span class="glyphicon glyphicon-list" style="color: #1a8fb4; font-size: 15px;"></span>   皮肤性病科二级科室</h3>
+                    <ul>
+                        
+                    </ul>
+                </div>
+                <div class="none" id="menu9">
+                    <h3><span class="glyphicon glyphicon-info-sign" style="color: #1a8fb4; font-size: 15px;"></span>  肿瘤科概述</h3>
+                    <div id="info" class="info">肿瘤科，有些医院分为肿瘤内科和肿瘤外科，肿瘤内科主要从事各种良、恶性肿瘤的内科治疗;肿瘤外科提供以手术为主的综合治疗。专门的肿瘤医院的相关科室会根据不同部位再行细分，例如乳腺外科、头颈外科等。</div>
+                    <h3><span class="glyphicon glyphicon-list" style="color: #1a8fb4; font-size: 15px;"></span>   肿瘤科二级科室</h3>
+                    <ul>
+                       
+                    </ul>
+                </div>
+                <div class="none" id="menu10">
+                    <h3><span class="glyphicon glyphicon-info-sign" style="color: #1a8fb4; font-size: 15px;"></span>  麻醉科概述</h3>
+                    <div id="info" class="info">麻醉科就是通过药物或其他方法使病人整体或局部暂时失去感觉，以达到无痛的目的，为患者进行手术治疗或其它医学检查的科室。麻醉是施行手术时或进行诊断性检查操作时为消除疼痛、保障病人安全、创造良好的手术条件而采取的各种方法。</div>
+                    <h3><span class="glyphicon glyphicon-list" style="color: #1a8fb4; font-size: 15px;"></span>   麻醉科二级科室</h3>
+                    <ul>
+                        
+                    </ul>
+                </div>
+                <div class="none" id="menu11">
+                    <h3><span class="glyphicon glyphicon-info-sign" style="color: #1a8fb4; font-size: 15px;"></span>  疼痛科概述</h3>
+                    <div id="info" class="info">疼痛已被现代医学列为继呼吸、脉搏、血压、体温之后的第五大生命体征。为所有疼痛患者提供治疗，是各国医疗服务的共同目标。疼痛科的医护人员治疗各种急性和慢性顽固性疼痛，为患者创造无痛轻松生活。</div>
+                    <h3><span class="glyphicon glyphicon-list" style="color: #1a8fb4; font-size: 15px;"></span>   疼痛科二级科室</h3>
+                    <ul>
+                       
+                    </ul>
+                </div>
+                <div class="none" id="menu12">
+                    <h3><span class="glyphicon glyphicon-info-sign" style="color: #1a8fb4; font-size: 15px;"></span>  医学影像科概述</h3>
+                    <div id="info" class="info">医学影像科是一个集医疗、教学、科研为一体，设备齐全(X线、DSA、CT、MRI、PET/CT)的综合性学科。医学影像是指为了医疗或医学研究，对人体或人体某部分，以非侵入方式取得内部组织影像的技术与处理过程。</div>
+                    <h3><span class="glyphicon glyphicon-list" style="color: #1a8fb4; font-size: 15px;"></span>   医学影像科二级科室</h3>
+                    <ul>
+                       
+                    </ul>
+                </div>
+                <div class="none" id="menu13">
+                    <h3><span class="glyphicon glyphicon-info-sign" style="color: #1a8fb4; font-size: 15px;"></span>  中医科概述</h3>
+                    <div id="info" class="info">中医科运用中国传统医学理论，采用中药，运用针灸、理疗等方法治疗中风、偏瘫、风湿性关节炎、哮喘等治疗各种疾病。与现代科学技术结合，运用各种高科技设备现对各种疑难杂症进行治疗。</div>
+                    <h3><span class="glyphicon glyphicon-list" style="color: #1a8fb4; font-size: 15px;"></span>     中医科二级科室</h3>
+                    <ul>
+                        
+                    </ul>
+                </div>
+                <div class="none" id="menu14">
+                    <h3><span class="glyphicon glyphicon-new-window" style="color: #1a8fb4; font-size: 15px;"></span>  其他科室</h3>
+                    <ul>
+                       
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="base/foot.html"></script>
+</body>
+
+<script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
+<script src="js/login.js"></script>
+<script src="js/app.js"></script>
+<script type="text/javascript" src="./js/departmentlist.js"></script>
+<script type="text/javascript" src="js/jquery.form.js"></script>
+</html>

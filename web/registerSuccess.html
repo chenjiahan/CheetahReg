@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>账号注册 | 有个挂号网</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/register.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link href="images/favicon.ico" rel="shortcut icon" />
+</head>
+
+<body>
+    <!--顶部-->
+    <script src="base/head.html"></script>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 reg-head">
+                <h1>注册成功</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 reg-suc-body">
+                <h2><img src="images/Hook.png" class="hook"><span id="name">用户名</span> 您好，恭喜您注册成功！</h2>
+                <p>下次访问时，您可以通过注册时填写的手机号或身份证号进行登录。</p>
+                <button type="button" id="person-btn" class="btn btn-info btn-lg btn-block" onclick="window.location='user_center.html'">进入个人中心</button>
+                <button type="button" class="btn btn-info btn-lg col-xs-10 btn-block" onclick="window.location='index.html'">返回首页</button>
+            </div>
+        </div>
+    </div>
+    <!--底部-->
+    <script src="base/foot.html"></script>
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/app.js"></script>
+    <script type="text/javascript" src="js/jquery.form.js"></script>
+    <script>
+        $(document).ready(function() {
+            var url = window.location.href;//获取url
+            var userName = url.split("?")[1].split("=")[1];
+            $("#name").html(decodeURI(userName));
+        });
+    </script>
+</body>
+</html>

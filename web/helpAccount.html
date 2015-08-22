@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>账号管理 | 猎豹挂号网</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/help.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link href="images/favicon.ico" rel="shortcut icon" />
+</head>
+
+<body>
+    <!--顶部-->
+    <script src="base/head.html"></script>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 my-container menu">
+                <ul>
+                    <li id="menu-title"><span class="glyphicon glyphicon-heart"></span>帮助中心</li>
+                    <li><a href="helpRegister.html"><span class="glyphicon glyphicon-tower"></span>注册指南</a></li>
+                    <li><a href="helpReservation.html"><span class="glyphicon glyphicon-tint"></span>预约指南</a></li>
+                    <li><a href="helpAccount.html" class="active"><span class="glyphicon glyphicon-briefcase"></span>账号管理</a></li>
+                    <li><a href="helpOther.html"><span class="glyphicon glyphicon-send"></span>其他问题</a></li>
+                </ul>
+            </div>
+            <div class="col-md-9 my-container help-body">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading green-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    如何修改密码？
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                登录猎豹挂号网后，点击“个人中心“>”账号设置“>”修改密码” ，输入新旧密码即可。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading green-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    一个账号同时能预约几个专家？
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                同一个患者同一个科室只能预约一个有效号源，不同科室一般最多预约两个有效号源。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading green-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    完善信息时提示“身份证被占用”或“手机号已被认证”怎么办？
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                1个手机号或1个身份证号码只能被注册1次；该提示说明您的手机号或身份证号码已经有注册记录，不能再次注册。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--底部-->
+    <script src="base/foot.html"></script>
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/app.js"></script>
+    <script type="text/javascript" src="js/jquery.form.js"></script>
+</body>
+</html>

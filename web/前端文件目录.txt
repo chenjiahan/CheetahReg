@@ -1,0 +1,31 @@
+index.html             首页
+about.html             关于我们
+contack.html           联系方式
+statement.html         法律声明
+link.html              友情链接
+agreement.html         注册协议
+annoounce.html         公告
+feedback.html          意见反馈
+help.html              帮助中心
+
+base/head.html        网站顶部
+base/foot.html        网站底部
+base/nav.html         导航栏
+
+user/login.html             登录
+user/register.html          注册
+user/orderlist.html         个人中心 --  我的预约单
+user/patients.html          个人中心 --  常用就诊人
+user/registerSuccess.html   注册成功
+
+css/index.css    首页的CSS
+css/base.css     顶部和底部的CSS
+css/footer.css   底部几个链接（关于我们等）的CSS
+css/register.css 登录和注册的CSS
+css/feedback.css 意见反馈的CSS
+css/announce.css 公告的CSS
+css/help.css     帮助中心的CSS
+
+js/boostrap.mim.js     Bootstrap框架的JS
+js/jquery-2.11.mim.js  Jquery框架的JS
+js/unslier.min.js      轮播的JS

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="网上预约挂号系统">
+    <meta name="keywords" content="猎豹挂号网">
+    <title>确认信息 | 猎豹挂号网</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/reservation.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link href="./images/favicon.ico" rel="shortcut icon" />
+</head>
+
+<body>
+    <!--顶部-->
+    <script src="base/head.html"></script>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="introduce" id="confirm-content">
+                    <div class="intro-title">
+                        <h3>预约订单信息</h3>
+                    </div>
+                    <div class="intro-content">
+                        <ul>
+                            <li class="col-md-4"><span>医院</span><label id="hospital_name"></label></li>
+                            <li class="col-md-4 right-li"><span>科室</span ><label id="department_name"></label></li>
+                            <li class="col-md-4 right-li"><span>类型</span><label id="kind"></label></li>
+                            <li class="col-md-4"><span>日期</span><label id="date"></label></li>
+                            <li class="col-md-4 right-li"><span>时段</span><label id="time"></label></li>
+                            <li class="col-md-4 right-li"><span>挂号费</span><label id="fee"></label></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="choose-patient">
+                    <div class="choose-patient-title">
+                        <h4 class="h4-title">选择就诊人</h4>
+                    </div>
+                    <div class="choose-patient-bd" id="box-container"></div>
+                </div>
+                <a href="user_center.html" target="_blank" class="col-md-12 add-patient">修改就诊人信息</a>
+            </div>
+
+            <div class="col-md-12 sent-sms">
+                <h4 class="h4-title">验证身份</h4>
+                <h4 id="confirm-mobile">请验证手机号：<span id="my-phoneNumber"></span></h4>
+                <div class="form-group">
+                    <div class="col-md-2 col-xs-8" style="padding: 0;">
+                        <input type="text" id="mobile" class="form-control" name="phoneNumber" autocomplete="off">
+                    </div>
+                    <input type="button" class="btn btn-default col-md-1 col-xs-4" id="sentMobile" onclick="countDown(this,60);" value="发送验证码">
+                </div>
+            </div>
+
+            <div class="col-md-2 btn-container">
+                <button type="button" class="btn btn-success" id="submit_reserve">确认预约</button>
+            </div>
+
+        </div>
+
+
+        <!-- 登陆框 -->
+        <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" id="success-modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">预约成功</h4>
+                        <p id="login-warning"></p>
+                    </div>
+                    <div class="modal-body login-body">
+                        <div class="main-body">
+                            <div class="col-md-12 message-box">
+                                <div class="top">
+                                    <p class="line">
+                                        <label class="remind">就诊人：</label>
+                                        <span class="content" id="success-name">姓名</span>
+                                    </p>
+                                    <p class="line">
+                                        <label class="remind">预约科室：</label>
+                                        <span class="content"><span id="success-hospital">医院</span>-<span id="success-apartment">科室</span></span>
+                                    </p>
+                                    <p class="line">
+                                        <label class="remind">就诊时间：</label>
+                                        <span class="content" id="success-time"></span>
+                                    </p>
+                                    <p class="line">
+                                        <label class="remind">门诊类型：</label>
+                                        <span class="content" id="success-level">专家门诊（<span id="success-fee">7.00</span>）</span>
+                                    </p>
+                                </div>
+                                <div class="down">
+                                    <label >注意事项：</label>
+                                    <p>1.您可以在<a href="user_center.html">我的预约单</a>查看订单详情</p>
+                                    <p>2.如遇专家停诊，您的订单会被取消，我们会以短信通知到您，请保持手机畅通</p>
+                                    <p>3.每个帐号每月下单和取消订单数量有限，请按需预约，若超出上限当月将不能再次预约</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--底部-->
+    <script src="base/foot.html"></script>
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/login.js"></script>
+    <script type="text/javascript" src="js/jquery.form.js"></script>
+    <script>
+        $(document).ready(function() {
+            var chooseContactPeopleId;
+            //获取就诊人信息
+            callAjax(baseUrlCjh()+"getContactPeople/","get",{},function(data){
+                var obj= eval(data);
+                var len = obj.length;
+                for ( var i = 0; i < len ; i++ ) {
+                    var div = document.createElement("div");
+                    var realName = obj[i].realName;
+                    var idCard = obj[i].IdCardNumber.substring(0,4) + "**********" + obj[i].IdCardNumber.substring(14,18);
+                    var contactPeopleId = obj[i].contactPeopleId;
+                    //判断是否是本人
+                    if ( obj[i].isMyself == '1' ) {
+                        realName += ' (本人)';
+                    }
+                    //第一个框为active
+                    if ( i == 0 ) {
+                        div.innerHTML = "<div class='col-md-2 choose-box active-choose-box' id=contactPeopleId" + contactPeopleId + "> <h4>" + realName + "</h4> <p>" + idCard + "</p> </div>";
+                        chooseContactPeopleId = contactPeopleId;
+                        chooseContactPeopleName = realName;
+                    } else {
+                        div.innerHTML = "<div class='col-md-2 choose-box' id=contactPeopleId" + contactPeopleId + "> <h4>" + realName + "</h4> <p>" + idCard + "</p> </div>";
+                    }
+                    document.getElementById('box-container').appendChild(div);
+                }
+            });
+
+            var department_id = getParameterByName("department_id");
+            var select_date = getParameterByName("date");
+            var i_number = getParameterByName('number');
+            $('#my-phoneNumber').html(getParameterByName('phoneNumber'));
+
+            //获取订单基本信息
+            callAjax(baseUrlCjh()+"reservationNumberInfo/","post",{department_id:department_id, date:select_date},function(data){
+                var obj= eval(data);
+                $('#hospital_name').html(obj[i_number].hospital_name);
+                $('#department_name').html(obj[i_number].department_name);
+                $('#kind').html(obj[i_number].level);
+                $('#date').html(obj[i_number].date);
+                $('#time').html(obj[i_number].time_interval);
+                $('#fee').html(obj[i_number].reservation_fee + "元");
+
+                $('#success-hospital').html(obj[i_number].hospital_name);
+                $('#success-department').html(obj[i_number].department_name);
+                $('#success-level').html(obj[i_number].level);
+                $('#success-time').html(obj[i_number].date);
+                $('#success-fee').html(obj[i_number].reservation_fee + "元");
+            });
+
+            //就诊人框选中效果
+            $(".choose-box").click(function(){
+                $(".active-choose-box").removeClass().addClass("col-md-2 choose-box");
+                this.className = 'col-md-2 choose-box active-choose-box';
+                chooseContactPeopleId = this.id;
+                chooseContactPeopleId=chooseContactPeopleId.replace("contactPeopleId","");
+                $('#success-name').html( $(".active-choose-box>h4").html());
+            });
+
+            //确认预约
+            $('#submit_reserve').click(function() {
+                var SMScode = document.getElementById('mobile').value;
+                if ( SMScode == "" ) {
+                    alert("请填写验证码！");
+                }
+                else {
+                    var reservationId = getParameterByName('reservationId');
+                    callAjax(baseUrlCjh()+"confirmReserve/","get",{reservationId:reservationId, SMScode:SMScode,contactPeopleId:chooseContactPeopleId},function(data){
+                        var obj= eval(data);
+                        if (obj.success == '0') {
+                            alert(obj.message);
+                        } else {
+                            $('#successModal').modal('show');
+                        }
+                    });
+                }
+            });
+        });
+
+        //点击发送验证码
+        $('#sentMobile').click(function() {
+            var mobileNumber = getParameterByName('phoneNumber');
+            callAjax(baseUrlCjh()+"validateSMS/"+mobileNumber,"get",{},function(data){});
+        });
+
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                    results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+
+        //发送验证码倒计时
+        function countDown(obj,second){
+            // 如果秒数还是大于0，则表示倒计时还没结束
+            if(second>=0){
+                // 获取默认按钮上的文字
+                if(typeof buttonDefaultValue === 'undefined' ){
+                    buttonDefaultValue =  obj.defaultValue;
+                }
+                // 按钮置为不可点击状态
+                obj.disabled = true;
+                // 按钮里的内容呈现倒计时状态
+                obj.value = '重新发送('+second+')';
+                // 时间减一
+                second--;
+                // 一秒后重复执行
+                setTimeout(function(){countDown(obj,second);},1000);
+                // 否则，按钮重置为初始状态
+            }else{
+                // 按钮置未可点击状态
+                obj.disabled = false;
+                // 按钮里的内容恢复初始状态
+                obj.value = buttonDefaultValue;
+            }
+        }
+    </script>
+</body>
+</html>

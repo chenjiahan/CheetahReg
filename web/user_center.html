@@ -1,0 +1,342 @@
+<!--
+    个人中心
+    本人的基本信息（重要信息隐藏（后台隐藏），例如：身份证号）
+    @author gyx
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="网上预约挂号系统">
+    <title>个人中心 | 猎豹挂号网</title>
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap-datepicker.css">
+    <link href="./images/favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" type="text/css" href="http://jonthornton.github.io/jquery-timepicker/jquery.timepicker.css" />
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap-datepicker.css" />
+    <link rel="stylesheet" href="./css/user_center.css">
+
+</head>
+
+<body>
+<!--顶部导航-->
+<script src="base/head.html"></script>
+
+<!--顶部主体-->
+<script src="base/nav.html"></script>
+
+
+<!--  左边为导航栏，导航项为：基本信息，我的预约-->
+<div class="container user-center">
+    <div class="row">
+        <div class="col-md-3 center-nav">
+
+            <div class="user">
+                <img class="user-icon" src="images/male.jpg"/>
+            </div>
+            <ul class="list-unstyled nav-list nav  nav-stacked nav-pills" role="tab-list" id="main-nav">
+                <li role="presentation" class="list-item active"><a href="#order" role="tab" data-toggle="tab">我的预约</a></li>
+                <li role="presentation" class="list-item"><a href="#patient" role="tab" data-toggle="tab">就诊人管理</a></li>
+                <li role="presentatoin" class="list-item"><a href="#config" role="tab" data-toggle="tab">账号设置</a></li>
+
+            </ul>
+        </div>
+        <div class="col-md-9 center-content">
+            <div class="tab-content">
+
+                <div role="tabpanel" class="tab-pane active" id="order">
+                    <div class="container-fluid">
+                        <div class="row title">
+                            <h3>我的预约</h3>
+                        </div>
+                        <div class="row main-content">
+                            <div class="container-fluid selecter">
+                                <div>
+                                    <span class="timeSelecter">
+                                        <div class="from">
+                                            <span>预约日期：</span>
+                                            <input type="text" class="date start" />
+
+                                        </div>
+
+                                        <div class="to">
+                                            <span>至</span>
+                                            <input type="text" class="date end" />
+
+                                        </div>
+                                    </span>
+                                    <button type="button" class="flit btn btn-success" style="margin-top: -3px ;height:28px;padding:2px">确定</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="result table " cellspacing="0" id="reservations">
+                                <thead>
+                                    <tr>
+                                        <th>就诊日期</th>
+                                        <th>预约医院</th>
+                                        <th>预约科室</th>
+                                        <th>就诊时间</th>
+                                        <th>就诊人</th>
+                                        <th>订单状态</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="patient">
+                    <div class="container-fluid">
+                        <div class="row title">
+                            <h3>就诊人管理</h3>
+                        </div>
+                        <div id="modify_person">
+                            <span id="m_hide" class="glyphicon glyphicon-remove " ></span>
+                            <div class="table-responsive">
+                                <form>
+                                <table  frame=void class="table">
+                                    <tbody>
+                                    <input id="contactId" name="contactPeopleId" type="hidden" />
+                                    <tr>
+                                        <td>就诊人姓名：</td>
+                                        <td id="m_real_name"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>身份证号：</td>
+                                        <td id="m_id_number"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>性别：</td>
+                                        <td id="m_sex">
+                                            <div class="radio pull-left">
+                                                <label>
+                                                    <input type="radio" name="gender" value="1" checked/>
+                                                    男
+                                                </label>
+                                                <label>
+                                                    <input type="radio"  name="gender"  value="2"/>
+                                                    女
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!--
+                                    <tr>
+                                        <td>出生年月：</td>
+                                        <td id="m_birthday">
+                                            <input type="text" class="date form-control" name="date" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>联系电话：</td>
+                                        <td id="m_mobile">***********</td>
+                                    </tr>
+                                    <tr>
+                                        <td>居住地：</td>
+                                        <td id="m_city">
+                                            <span>省：</span>
+                                            <select class="form-control province" name="province">
+                                            </select>
+                                            <span>市：</span>
+                                            <select class="form-control city" name="city">
+                                            </select>
+                                            <span>区：</span>
+                                            <select class="form-control district" name="district">
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>详细地址：</td>
+                                        <td id="m_live">
+                                            <input type="text" class="form-control" name="address" />
+                                        </td>
+                                    </tr>-->
+
+                                    </tbody>
+                                </table>
+                                <button type="button" class=" btn btn-success submit" >保存修改</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div id="add_person">
+                            <span id="a_hide" class="glyphicon glyphicon-remove " ></span>
+                            <div class="table-responsive">
+                                <form>
+                                    <table  frame=void class="table">
+                                        <tbody>
+                                        <tr>
+                                            <td>就诊人姓名：</td>
+                                            <td id="a_real_name"><input name="realName" class="form-control"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>身份证号：</td>
+                                            <td id="a_id_number"><input name="IdCardNumber" class="form-control"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>性别：</td>
+                                            <td id="a_sex">
+                                                <div class="radio pull-left">
+                                                    <label>
+                                                        <input type="radio" name="gender"  value="1" checked/>
+                                                        男
+                                                    </label>
+                                                    <label>
+                                                        <input type="radio"  name="gender"  value="2"/>
+                                                        女
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <!--
+                                        <tr>
+                                            <td>出生年月：</td>
+                                            <td id="a_birthday">
+                                                <input type="text" class="date form-control" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>联系电话：</td>
+                                            <td id="a_mobile"><input name="mobile" class="form-control"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>居住地：</td>
+                                            <td id="a_city">
+                                                <span>省：</span>
+                                                <select class="form-control province" name="province">
+                                                </select>
+                                                <span>市：</span>
+                                                <select class="form-control city" name="city">
+                                                </select>
+                                                <span>区：</span>
+                                                <select class="form-control district" name="district">
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>详细地址：</td>
+                                            <td id="a_live">
+                                                <input type="text" class="form-control" name="address"/>
+                                            </td>
+                                        </tr>
+                                        -->
+
+                                        </tbody>
+                                    </table>
+                                    <button type="button" class=" btn btn-success submit" >添加</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class=" table-responsive">
+                            <table class="table result" cellspacing="0" id="contact_people">
+                                <thead>
+                                <tr>
+                                    <th>姓名</th>
+                                    <th>性别</th>
+                                    <th>身份</th>
+                                    <th>证件号</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="config">
+                    <div class="container-fluid">
+                        <div class="row title">
+                            <h3>账号设置</h3>
+                        </div>
+                        <div class="row main-content">
+                            <ul class="list-unstyled ac-nav nav nav-tabs  " role="tab-list" style="margin-bottom: -1px;">
+                                <li role="presentation" id="personTab" class="active person-nav"><a href="#person" role="tab" data-toggle="tab">基本信息</a></li>
+                                <li role="presentation" id="modifyTab" class="person-nav"><a href="#modify" role="tab" data-toggle="tab">修改密码</a></li>
+                                <li role="presentatoin" id="headTab" class="person-nav"><a href="#head" role="tab" data-toggle="tab">头像设置</a></li>
+                            </ul>
+                         </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane ac-content" id="person" >
+                        <div class="table-responsive">
+                            <table  frame=void class="table">
+                                <tbody>
+                                <tr>
+                                    <td>登录名：</td>
+                                    <td id="user_name"></td>
+                                </tr>
+                                <tr>
+                                    <td>邮箱：</td>
+                                    <td id="email">*******@qq.com</td>
+                                </tr>
+                                <tr>
+                                    <td>真实姓名：</td>
+                                    <td id="real_name">张清鸿</td>
+                                </tr>
+                                <tr>
+                                    <td>身份证号：</td>
+                                    <td id="id_number">****************</td>
+                                </tr>
+                                <tr>
+                                    <td>注册时间</td>
+                                    <td id="register_time">2014/11/26</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane ac-content" id="modify" style="display: none">
+                            <form id="password-form" role="form" >
+                                <div class="form-group">
+                                    <input type="password" class="form-control" id="old_password" placeholder="请输入新密码">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" id="new_password" placeholder="请重复密码">
+                                </div>
+                                <button type="button" class="btn btn-info" id="mod-password">修改密码</button>
+                                <p id="password-msg" >两次输入的密码不一致，请重新输入。</p>
+                            </form>
+                    </div>
+                    <div role="tabpanel" class="tab-pane ac-content" id="head" style="display: none">
+                        <div>
+                            <img src="images/male.jpg" id="head-icon"/>
+                            <p>点击上方头像开始上传图片，点击下方按钮保存修改。</p>
+                            <button type="button" class="btn btn-info">修改头像</button>
+                            <input type="file" id="file"/>
+                            <p id="head-msg" >请上传图像文件。</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="base/foot.html"></script>
+<script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="./js/jquery.datepair.min.js"></script>
+<script type="text/javascript" src="./js/jquery.timepicker.js"></script>
+<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./js/bootstrap-datepicker.js"></script>
+<script src="./js/jquery.form.js"></script>
+<script src="./js/app.js"></script>
+<script src="./js/login.js"></script>
+<script type="text/javascript" src="./js/user_center.js"></script>
+
+
+
+</body>
+</html>

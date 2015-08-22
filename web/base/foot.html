@@ -1,0 +1,28 @@
+var fun = function() {
+/*
+<!--底部-->
+<footer class="foot">
+    <div class="container-fluid">
+        <div class="col-md-12">
+            <ul>
+                <li><a href="about.html" target="_top">关于我们</a></li>
+                <li>|</li>
+                <li><a href="contact.html" target="_top">联系方式</a></li>
+                <li>|</li>
+                <li><a href="statement.html" target="_top">法律声明</a></li>
+                <li>|</li>
+                <li><a href="link.html" target="_top">友情链接</a></li>
+                <li>|</li>
+                <li><a href="agreement.html" target="_top">注册协议</a></li>
+            </ul>
+            <p>Copyright © 2014 Cheetah.<br>
+                All rights reserved.</p>
+        </div>
+
+    </div>
+</footer>
+*/
+}
+var lines = new String(fun);
+document.write(lines.substring(lines.indexOf("/*") + 3,
+lines.lastIndexOf("*/")));

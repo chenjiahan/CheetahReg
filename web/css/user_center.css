@@ -1,0 +1,488 @@
+/*
+    user_center 用的css
+    @author gyx
+*/
+a{
+    color: #000;
+}
+
+
+
+
+.user-center{
+    margin-top:20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+}
+
+.btn-info{
+    color:#fff;background-color:#428bca;
+}
+
+/* 左侧导航栏 */
+.center-nav{
+    padding :0;
+
+}
+
+.center-nav >.nav-list{
+
+    border-top: 1px solid #ddd;
+
+}
+
+
+.nav-list >.list-item{
+    text-align: center;
+    height: 50px;
+    line-height:50px;
+    border-bottom:1px solid #ddd ;
+    cursor: pointer;
+    background: #fff;
+    margin: 0;
+
+}
+
+.nav-list>.list-item>a{
+    padding: 0;
+    border-radius: 0px;
+    margin: 0;
+
+}
+
+@media screen and (max-width: 768px) {
+    .nav-tabs>li a:hover,
+    .nav-tabs>li.active>a
+    {
+        color:#428bca!important
+    }
+    .nav-tabs:first-child{
+        margin-left: 0px;
+    }
+
+    .nav-tabs>li{
+        width: 33.3%;
+        text-align: center;
+    }
+
+}
+
+.user{
+    padding: 10px;
+    text-align: center;
+}
+
+#patient .table-responsive{
+    margin-top: 50px;
+}
+
+.user-icon{
+    max-width: 200px;
+    max-height: 200px;
+    margin-bottom: 30px;
+}
+
+
+
+
+@media screen and (max-width: 768px){
+    .user{
+        display: none;
+    }
+
+
+    .user-icon{
+        margin-bottom: 10px;
+        margin-top: 10px;
+        margin-left: 20px;
+        width: 55px;
+        float: left;
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+    }
+
+
+
+}
+.title{
+    border-bottom:2px solid #66B3FF ;
+
+}
+
+h3{
+    font-weight: bold;
+    color: #66B3FF;
+    margin-bottom:30px;
+}
+
+@media screen and (max-width: 768px) {
+    h3{
+        font-weight: bold;
+        color: #66B3FF;
+        margin-bottom:15px;
+    }
+}
+.center-content{
+    min-height: 480px;
+    border-left: 1px solid #ddd;
+}
+
+
+
+
+
+.result {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.result table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table{
+    font-size: 1em;
+}
+
+th {
+    font: bold "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+    color: #4f6b72;
+    border-right: 1px solid #C1DAD7;
+    border-bottom: 1px solid #C1DAD7;
+    border-top: 1px solid #C1DAD7;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 6px 6px 6px 12px;
+    background: #CAE8EA  no-repeat;
+}
+/*power by www.winshell.cn*/
+th.nobg {
+    border-top: 0;
+    border-left: 0;
+    border-right: 1px solid #C1DAD7;
+    background: none;
+}
+
+td {
+    border-right: 1px solid #C1DAD7;
+    border-bottom: 1px solid #C1DAD7;
+    background: #fff;
+    padding: 6px 6px 6px 12px;
+    color: #4f6b72;
+}
+/*power by www.winshell.cn*/
+
+td.alt {
+    background: #F5FAFA;
+    color: #797268;
+}
+
+th.spec {
+    border-left: 1px solid #C1DAD7;
+    border-top: 0;
+    background: #fff no-repeat;
+    font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+}
+
+th.specalt {
+    border-left: 1px solid #C1DAD7;
+    border-top: 0;
+    background: #f5fafa no-repeat;
+    font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+    color: #797268;
+}
+
+.status{
+    max-width: 100px;
+    padding: 2px;
+    height: 28px;
+    margin-top: -3px;
+    display: inline;
+}
+
+.selecter{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-right:0;
+}
+
+.selecter span{
+    line-height: 20px;
+}
+.selecter > div{
+    margin-top:1%;
+    margin-bottom: 1%
+}
+
+.selecter  input{
+    max-width: 100px;
+    margin-left: 1%;
+}
+
+.flit{
+    width: 8%;
+}
+
+.timeSelecter .from,.timeSelecter .to{
+    display:inline;
+}
+
+@media screen and (max-width: 768px){
+
+    .status{
+        display: inline;
+        margin-bottom: 20px;
+    }
+
+    .timeSelecter .from,.timeSelecter .to{
+        width: 100%;
+        display:block;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .flit{
+        margin-left: 110px;
+    }
+    .selecter input , .selecter select , .flit {
+        max-width: 100%;
+        width: 60%;
+        margin-left: auto;
+    }
+
+    .from>span, .to>span,.selecter>div>span:not(.timeSelecter){
+        max-width: 100%;
+        width: 20%;
+        display: inline-block;
+        margin-left: auto;
+        margin-right: 10px;
+    }
+
+}
+
+#detail{
+    display: none;
+}
+
+#d_hide,#m_hide,#a_hide{
+    float: right;
+    margin-top: 2%;
+    margin-right: 2%;
+    cursor: pointer;
+    position: relative;
+    top: 28px;
+}
+
+
+#modify_person,#add_person{
+    display: none;
+}
+
+#modify_person table>thead>tr>th, #modify_person table>tbody>tr>th, #modify_person table>tfoot>tr>th, #modify_person table>thead>tr>td, #modify_person table>tbody>tr>td, #modify_person table>tfoot>tr>td,
+#add_person table>thead>tr>th, #add_person table>tbody>tr>th, #add_person table>tfoot>tr>th, #add_person table>thead>tr>td, #add_person table>tbody>tr>td, #add_person table>tfoot>tr>td{
+    line-height: 28px;
+    vertical-align: middle;
+}
+
+.radio label{
+    margin-right: 20px;
+}
+
+#modify_person button,#add_person button{
+    margin-left: 38%;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    #modify_person button,#add_person button{
+        width: 50%;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .user-center{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border: 0;
+    }
+
+
+}
+
+
+.operate{
+    text-align: left;
+}
+
+.operate a{
+    margin-right: 10px;
+    color: #428bca;
+    cursor: pointer;
+}
+
+
+.ac-nav{
+    margin-top: 20px;
+    text-align: center
+}
+
+.ac-nav>li{
+    max-width: 150px;
+}
+
+@media screen and (max-width: 768px){
+    .nav-tabs>li{
+        margin-left: 0;
+        max-width: 100%;
+        width: 33.3%;
+    }
+
+    .nav-tabs:first-child {
+         margin-left:0;
+    }
+
+}
+
+.ac-nav>li.active{
+    color: #66B3FF;
+}
+
+.main-content{
+    background: #fcfcfc;
+}
+#person table{
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#detail table,#modify_person table,#add_person table{
+    margin-top: 50px;
+}
+#person tr,#detail tr,#modify_person tr,#add_person tr {
+    padding: 30px;
+}
+
+#person tr>td,#detail tr>td,#modify_person tr>td,#add_person tr>td{
+    text-align: left;
+    border:none;
+
+}
+
+#modify_person tr>td>select,
+#modify_person tr>td>input,
+#add_person tr>td>select,
+#add_person tr>td>input{
+    width: 50%;
+}
+
+#modify_person #m_city select,
+#add_person #a_city select{
+    width: 20%;
+    display: inline;
+}
+
+
+@media screen and (max-width: 768px){
+    .tab-pane{
+        margin-left:0px;
+    }
+}
+
+#person tr>td:first-child,
+#detail tr>td:first-child,
+#modify_person tr>td:first-child,
+#add_person tr>td:first-child{
+    text-align: right;
+}
+
+
+#detail tr>td:first-child,
+#modify_person tr>td:first-child,
+#add_person tr>td:first-child{
+    width: 24%;
+}
+
+#modify form{
+    padding-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+}
+
+#modify p{
+    display: none;
+    color: red;
+
+}
+
+#modify .form-control{
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+@media screen and (max-width:768px) {
+    #modify .form-control{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #modify button{
+        width: 50%;
+    }
+}
+
+#head div{
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#head img{
+    width: 200px;
+    height: 200px;
+    border: 2px solid #ddd;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    display: block;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width:768px) {
+    #head img{
+        width: 150px;
+        height: 150px;
+        border: 2px solid #ddd;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        cursor: pointer;
+    }
+
+    #head button{
+        width: 50%;
+    }
+}
+
+
+#head #file{
+    display: none;
+}
+
+
+#head #head-msg{
+    display: none;
+    color: red;
+
+}

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>账号注册 | 有个挂号网</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/register.css" />
+    <link rel="stylesheet" href="css/bootstrapValidator.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link href="images/favicon.ico" rel="shortcut icon" />
+</head>
+
+<body>
+    <!--顶部-->
+    <script src="base/head.html"></script>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 reg-head">
+                <h1>账号注册</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 reg-body col-md-offset-4">
+                <div class="choose-head">
+                    <div class="head col-xs-6">
+                        <a href="javascript:"><img src="images/male.jpg" id="m-img" class="img-circle img-active"></a>
+                        <span class="span-active" id="m-span">男性</span>
+                    </div>
+                    <div class="head col-xs-6">
+                        <a href="javascript:"><img src="images/female.jpg" id="f-img" class="img-circle"></a>
+                        <span id="f-span">女性</span>
+                    </div>
+                </div>
+
+                <form id="register-form" class="form-horizontal">
+                    <input type="hidden" id="sex" name="gender" value="1">
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">真实姓名:</label>
+                        <div class="col-xs-9">
+                            <input type="text" id="name" class="form-control" name="realName" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">身份证号:</label>
+                        <div class="col-xs-9">
+                            <input type="text" id="idNumber" class="form-control" name="IdCardNumber" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">登录密码:</label>
+                        <div class="col-xs-9">
+                            <input type="password" id="password" class="form-control" name="password" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">确认密码:</label>
+                        <div class="col-xs-9">
+                            <input type="password" id="confirmPassword" class="form-control" name="confirmPassword" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">手机号:</label>
+                        <div class="col-xs-6">
+                            <input type="text" id="mobile" class="form-control" name="phoneNumber" autocomplete="off" onkeyup="LockBtn(this);">
+                        </div>
+                        <input type="button" class="btn btn-default col-xs-3" id="sentMobile" onclick="countDown(this,60);" value="发送验证码" disabled="true">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">短信验证码:</label>
+                        <div class="col-xs-9">
+                            <input type="text" id="confirmMobile" class="form-control" name="SMSCode" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="form-group agree">
+                        <div class="checkbox">
+                            <input type="checkbox" id="checkAgreement"  name="checkAgreement" checked="true">我同意
+                            <a href="agreement.html" target="_blank">《猎豹挂号网注册协议》</a>
+                        </div>
+                    </div>
+                    <div class="form-group btn-area">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block" id="register-btn">注册</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--底部-->
+    <script src="base/foot.html"></script>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrapValidator.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/login.js"></script>
+    <script type="text/javascript" src="js/jquery.form.js"></script>
+    <script>
+      $(document).ready(function() {
+        /*--头像切换--*/
+        $('#m-img').click(function(){
+          document.getElementById('m-img').className = 'img-circle img-active';
+          document.getElementById('m-span').className = 'span-active';
+          document.getElementById('f-img').className = 'img-circle';
+          document.getElementById('f-span').className = '';
+          document.getElementsByName('sex').value = '1';
+        });
+        $('#f-img').click(function(){
+          document.getElementById('m-img').className = 'img-circle';
+          document.getElementById('m-span').className = '';
+          document.getElementById('f-img').className = 'img-circle img-active';
+          document.getElementById('f-span').className = 'span-active';
+          document.getElementsByName('sex').value = '2';
+        });
+
+        //点击发送验证码
+        $('#sentMobile').click(function() {
+          var mobileNumber = document.getElementById('mobile').value;
+          callAjax(baseUrlCjh()+"validateSMS/"+mobileNumber,"get",{},function(data){
+            var obj= eval(data);
+          });
+        });
+      });
+
+      /*--表单验证-*/
+      $(document).ready(function() {
+        $('#register-form').bootstrapValidator({
+          message: 'This value is not valid',
+          feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+          },
+          fields: {
+            realName: {
+              validators: {
+                notEmpty: {
+                  message: '请输入真实姓名'
+                }
+              }
+            },
+            IdCardNumber: {
+              validators: {
+                stringLength: {
+                  min: 18,
+                  max: 18,
+                  message: '请输入正确的身份证号'
+                },
+                regexp: {
+                  regexp: /^[a-zA-Z0-9_\.]+$/,
+                  message: '请输入正确的身份证号'
+                },
+                notEmpty: {
+                  message: '请输入身份证号'
+                }
+              }
+            },
+            password: {
+              validators: {
+                notEmpty: {
+                  message: '请输入登录密码'
+                },
+                stringLength: {
+                  min: 6,
+                  max: 20,
+                  message: '请输入6-20位密码'
+                }
+              }
+            },
+            confirmPassword: {
+              validators: {
+                notEmpty: {
+                  message: '请再次确认登陆密码'
+                },
+                identical: {
+                  field: 'password',
+                  message: '两次输入的密码不同!请重试'
+                }
+              }
+            },
+            phoneNumber: {
+              validators: {
+                phone: {
+                  country: 'CN',
+                  message: '请输入正确的手机号'
+                },
+                notEmpty: {
+                  message: '请输入手机号'
+                }
+              }
+            },
+            SMSCode: {
+              validators: {
+                notEmpty: {
+                  message: '请输入短信验证码'
+                },
+                stringLength: {
+                  min: 4,
+                  max: 4,
+                  message: '请输入正确的短信验证码'
+                },
+                regexp: {
+                  regexp: /^[a-zA-Z0-9_\.]+$/,
+                  message: '请输入正确的短信验证码'
+                }
+              }
+            }
+          }
+        })
+          .on('success.form.bv', function(e) {
+            // Prevent form submission
+            e.preventDefault();
+
+            // Get the form instance
+            var $form = $(e.target);
+
+            // Get the BootstrapValidator instance
+            var bv = $form.data('bootstrapValidator');
+
+            callSubmit(baseUrlCjh()+"register","post",callback,$("#register-form"));
+            //注册后的响应
+            function callback(data){
+              var obj = eval(data);
+              if(obj.success=='1') {
+                var name = document.getElementById('name').value;
+                window.location.href= encodeURI("registerSuccess.html?name=" + name);
+              }
+              else {
+                alert('注册失败！'+obj.message);
+              }
+            }
+          });
+      });
+
+      //锁定发送验证码
+      function LockBtn() {
+        var mobileNumber = document.getElementById('mobile').value;
+        var regPartton = /1[0-8]+\d{9}/;
+        var obj = document.getElementById('sentMobile');
+        obj.disabled = !regPartton.test(mobileNumber);
+      }
+
+      //发送验证码倒计时
+      function countDown(obj,second){
+        // 如果秒数还是大于0，则表示倒计时还没结束
+        if(second>=0){
+          // 获取默认按钮上的文字
+          if(typeof buttonDefaultValue === 'undefined' ){
+            buttonDefaultValue =  obj.defaultValue;
+          }
+          // 按钮置为不可点击状态
+          obj.disabled = true;
+          // 按钮里的内容呈现倒计时状态
+          obj.value = '重新发送('+second+')';
+          // 时间减一
+          second--;
+          // 一秒后重复执行
+          setTimeout(function(){countDown(obj,second);},1000);
+          // 否则，按钮重置为初始状态
+        }else{
+          // 按钮置未可点击状态
+          obj.disabled = false;
+          // 按钮里的内容恢复初始状态
+          obj.value = buttonDefaultValue;
+        }
+      }
+    </script>
+</body>
+</html>

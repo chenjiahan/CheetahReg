@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>意见反馈 | 猎豹挂号网</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/feedback.css" />
+    <link rel="stylesheet" href="css/bootstrapValidator.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link href="images/favicon.ico" rel="shortcut icon" />
+</head>
+
+<body>
+    <!--顶部-->
+    <script src="base/head.html"></script>
+    <div class="container">
+        <div class="row feed-container">
+            <div class="feed-title">
+                <h3><span class="glyphicon glyphicon-comment"></span> 意见反馈</h3>
+            </div>
+            <div class="feed-body">
+                <p>感谢您对猎豹挂号网的关注和支持! 欢迎您提出宝贵意见和建议，有了您的建议，猎豹挂号网才能做的更好。<br>请先登录后再提交您的意见，谢谢！</p>
+                <form >
+                    <ul>
+                        <li>
+                            <label for="form-title">标题:</label>
+                            <textarea class="form-control" rows="1" id="form-title" name="title" placeholder="在此输入您的标题"></textarea>
+                        </li>
+                        <li>
+                            <label for="form-body">内容:</label>
+                            <textarea class="form-control" rows="8" id="form-body" name="content" placeholder="在此留下您的建议和意见，谢谢！"></textarea>
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-success" onclick="submit_feedback();">提交</button>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--底部-->
+    <script src="base/foot.html"></script>
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/app.js"></script>
+    <script type="text/javascript" src="js/jquery.form.js"></script>
+    <script>
+        function submit_feedback() {
+            alert('反馈成功！');
+        }
+    </script>
+</body>
+</html>

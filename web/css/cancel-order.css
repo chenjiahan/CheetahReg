@@ -1,0 +1,28 @@
+body,p,h1,h2,h3,h4,h5,a{
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif !important;
+}
+
+.main-body{
+    background: #FFFAFA;
+    margin-top:30px;
+}
+
+.main-body .top{
+    margin-left:170px;
+}
+
+.main-body .top .img{
+    float:left;
+    padding-top:10px;
+}
+
+.main-body .down{
+    margin-left:170px;
+    padding-top:40px;
+}
+@media (max-width: 768px){
+    .main-body .top, .main-body .down{
+        margin-left:0;
+    }
+}
+

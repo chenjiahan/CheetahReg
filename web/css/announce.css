@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+.ann-title {
+    border-bottom: 1px solid #1a8fb4;
+    margin: 0 5px 0;
+}
+@media (min-width: 768px) {
+    .ann-title {
+        margin: 0 20px 0;
+    }
+}
+.ann-title h3 {
+    color: #1a8fb4;
+    margin: 20px 0 10px;
+    font-size:20px;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif !important;
+}
+.ann-container {
+    height: 1100px;
+    border:1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+@media (min-width: 768px) {
+    .ann-container {
+        height: 530px;
+    }
+}
+.ann-body {
+    padding:20px 5px 0;
+}
+.ann-body span {
+    float: right;
+    color: #fff;
+    font-size: 13px;
+}
+@media (min-width: 768px) {
+    .ann-body span {
+        float: right;
+        font-size: 16px;
+    }
+}
+.heading-blue {
+    background-color: #00AEAE !important;
+}
+.heading-green {
+    background-color: #5cb85c !important;
+}
+.ann-body .panel-heading {
+    color:#fff !important;
+    font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+    padding-left:10px;
+}
+.panel-heading h4 {
+    font-size:13px;
+}
+@media (min-width: 768px) {
+    .panel-heading h4 {
+        font-size:16px;
+    }
+}
+@media (min-width: 768px) {
+    .ann-body .panel-heading {
+        padding-left:15px;
+    }
+}
+.ann-body .panel-body {
+    font-size:14px;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif !important;
+}
+.panel-heading a:hover{
+    text-decoration: none;
+}
+
+.ann-page {
+    float:right;
+    margin-right:5px;
+}
+@media (min-width: 768px) {
+    .ann-page {
+        margin-right:40px;
+    }
+}

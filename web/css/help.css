@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+/*--容器--*/
+.my-container {
+    border: 1px solid #ddd;
+    margin-top: 30px;
+    padding: 15px 0 10px;
+}
+@media (min-width: 768px) {
+    .my-container {
+        height: 445px;
+    }
+}
+.my-container ul {
+    list-style-type: none;
+    padding: 0 10px 0;
+}
+.right-content li {
+    line-height:30px;
+    text-indent: 2em;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif;
+}
+.right-content li a:hover {
+    text-decoration:none;
+    background-color:#377bee!important;
+}
+
+/*--左侧导航--*/
+.menu{
+    height: 260px;
+    border-right:none;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+@media (min-width: 768px) {
+    .menu{
+        height: 445px;
+    }
+}
+.menu li a{
+    display: block;
+    text-align:center;
+    font-size: 18px;
+    line-height:40px;
+    font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+    color:#00AEAE;
+    margin-top: 5px;
+    transition: all 0.15s ease-in-out;
+}
+@media (min-width: 768px) {
+    .menu li a{
+        line-height:50px;
+        margin-top: 10px;
+    }
+}
+.menu li a:hover {
+    text-decoration:none;
+    background-color:#00AEAE ;
+    color:#FFF;
+}
+.active{
+    background-color:#00AEAE!important; ;
+    color:#FFF !important;
+}
+.menu span {
+    padding-right:10px;
+}
+#menu-title{
+    color:#00AEAE;
+    font-size:20px;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif;
+    border-bottom:1px solid #00AEAE;
+    padding:0 0 8px;
+    margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+    #menu-title{
+        margin-bottom: 30px;
+    }
+}
+
+.help-body {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.green-heading {
+    background-color: #3ca85c!important;
+    transition: all 0.15s ease-in-out;
+}
+.green-heading:hover{
+    background-color: #1c985c!important;
+}
+.panel-title>a{
+    color:#fff!important;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif;
+}
+.panel-title>a:hover{
+    text-decoration: none;
+}
+.panel-body {
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif;
+}
+
+
+@media (min-width: 768px) {
+    .help-reservation{
+        height:665px;
+    }
+}

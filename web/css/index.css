@@ -1,0 +1,255 @@
+@charset "UTF-8";
+
+/*--容器--*/
+.my-container {
+    height: 300px;
+    border: 1px solid #ddd;
+    margin-top: 30px;
+    padding: 10px 0 10px;
+}
+.my-container h3{
+    color: #1a8fb4;
+    margin: 0 0 10px;
+    padding: 10px 0 10px;
+    font-size:20px;
+    text-indent:4px;
+    border-bottom: 1px solid #ddd;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif !important;
+}
+.my-container ul {
+    padding: 0;
+}
+.my-container li {
+    padding: 5px 0 0;
+    margin-left: 15px;
+    font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+}
+.my-container li a {
+    color: #535353;
+    transition: all 0.15s ease-in-out;
+}
+.my-container li a:hover {
+    color: #f98b0c;
+    text-decoration: none;
+}
+.my-container span {
+    color:#1a8fb4;
+    float:left;
+}
+
+/*--快速预约--*/
+.fast-order-select {
+    padding:10px 20px 0;
+}
+.fast-order-select label{
+    float: left;
+    padding-top: 5px;
+}
+.fast-order-select select{
+    float: left;
+    width: 80%;
+    margin-left: 5px;
+}
+.fast-order-btn {
+    margin: 10px 53px 0;
+    width: 130px;
+    transition: all 0.2s ease-in-out;
+    background-color: #00AEAE !important;
+}
+.fast-order-btn:hover {
+    background-color: #008E8E!important;
+}
+
+/*--最新公告--*/
+.announce-panel  h4 {
+    font-size:13px;
+}
+.announce-panel  h4>a>span {
+    float:right;
+    color:#fff;
+}
+.announce-panel  a:hover{
+    text-decoration: none;
+}
+.announce-panel .panel-heading {
+    background-color: #00AEAE !important;
+    color:#fff !important;
+    font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+    transition: all 0.2s ease-in-out;
+}
+.announce-panel .panel-heading:hover{
+    background-color: #008E8E !important;
+}
+.announce-panel .panel-body {
+    font-size:13px;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif !important;
+}
+
+/*--更多--*/
+.more-notice{
+    color:#5CA945;
+    font-size: 14px;
+    font-weight:normal;
+}
+.more-notice span {
+    color:#5CA945;
+    padding-top: 4px;
+}
+.more-notice:hover {
+    text-decoration:none;
+    color: #f98b0c;
+    transition: all 0.15s ease-in-out;
+}
+.more {
+    float:left;
+    color:#5CA945 !important;
+}
+.more span {
+    color:#5CA945;
+    padding-top: 1px;
+    width:20px !important;
+    float:right
+}
+.more:hover {
+    color: #f98b0c !important;
+    transition: all 0.15s ease-in-out !important;
+}
+
+/*--轮播--*/
+.slide {
+    margin-top: 30px;
+}
+.slide .item {
+    height: 200px;
+}
+@media (min-width: 768px) {
+    .slide .item {
+        height: 300px;
+    }
+}
+
+/*--医院查询--*/
+#inquiry {
+    height: 1130px;
+    border: none;
+    padding:0;
+}
+@media (min-width: 768px) {
+    #inquiry {
+        height: 570px;
+        padding-right: 15px;
+    }
+}
+.inquiry-container {
+    padding: 10px  15px 0 15px;
+    border:1px solid #ddd;
+}
+.hospital-tabs {
+    height: 400px;
+}
+@media (min-width: 768px) {
+    .hospital-tabs {
+        height: 150px;
+    }
+}
+.hospital-tabs li {
+   /* width: 62px;*/   /*修改by gyx*/
+}
+.nav-tabs>li.active>a{
+    color:#4cae4c !important;
+}
+.nav-tabs>li a:hover{
+    color:#4cae4c !important;
+}
+.tab-content li {
+    display: inline;
+    float: left;
+    width: 261px;
+}
+
+/*--科室查询--*/
+.apartment-inquiry {
+    height: 660px;
+}
+@media (min-width: 768px) {
+    .apartment-inquiry {
+        height: 345px;
+        margin-top: 10px;
+    }
+}
+.apartment-inquiry li{
+    display: inline;
+    float: left;
+    width: 300px;
+    line-height: 24px;
+}
+.apartment-inquiry ul {
+    padding-top: 5px;
+}
+@media (min-width: 768px) {
+    .apartment-inquiry li{
+        width: 400px;
+    }
+}
+.apartment-inquiry label{
+    float: left;
+    font-size: 16px;
+    width: 65px;
+}
+@media (min-width: 768px) {
+    .apartment-inquiry label{
+        width: 75px;
+    }
+}
+.apartment-inquiry label a {
+    font-size: 16px;
+    color: #222;
+    font-weight:normal;
+}
+.apartment-inquiry p {
+    float: left;
+    width: 230px;
+}
+@media (min-width: 768px) {
+    .apartment-inquiry p {
+        float: left;
+        width: 320px;
+    }
+}
+.apartment-inquiry>ul span {
+    float:left;
+    width: 75px;
+    font-size: 12px;
+}
+@media (min-width: 768px) {
+    .apartment-inquiry>ul span {
+        width: 100px;
+        font-size: 14px;
+    }
+}
+
+/*--热门医院--*/
+.hot-hospital {
+    height: 570px;
+}
+.hot-hospital ul{
+    list-style-type: none;
+}
+.hot-hospital li {
+    text-align:center;
+    margin: 0;
+}
+.hot-hospital h4 a{
+    color:#035B9E;
+    font-size: 16px;
+}
+.hot-hospital img {
+    width: 250px;
+    height: 160px;
+}
+.hot-hospital img:hover{
+    border:2px solid #4cae4c;
+}
+.hot-hospital p {
+    margin-top: 5px;
+}

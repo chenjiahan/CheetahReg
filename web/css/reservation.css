@@ -1,0 +1,205 @@
+@charset "UTF-8";
+
+.introduce {
+    margin-top:30px;
+    height:283px;
+    border:1px solid #ddd;
+}
+#confirm-content {
+    height:285px;
+}
+@media (min-width: 768px) {
+    .introduce {
+        height:162px;
+    }
+
+}
+@media (min-width: 768px) {
+    #confirm-content {
+        height:121px!important;
+    }
+
+}
+.introduce h3 {
+    color:#fff;
+    border-bottom:1px solid #ddd;
+    padding: 10px 15px;
+    margin:0;
+    font-size:16px;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif;
+}
+.intro-title {
+    background-color: #009e9e;
+}
+.intro-content ul {
+    list-style-type: none;
+    padding:0;
+    margin:0;
+}
+.intro-content li {
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif;
+    font-size:14px;
+    line-height: 40px;
+    border-bottom:1px solid #ddd;
+    padding: 0;
+}
+.intro-content li>span {
+    display:block;
+    float:left;
+    width:80px;
+    height: 40px;
+    text-align: center;
+    margin-right:15px;
+    border-right:1px solid #ddd;
+    font-weight: bold;
+}
+.intro-content li:hover{
+    background-color: #d9edf7;
+}
+@media (min-width: 768px) {
+    .right-li>span {
+        border-left:1px solid #ddd;
+    }
+}
+.doc-list {
+    margin-top:30px;
+}
+.doc-title h4 {
+    color:#fff;
+    padding: 3px 15px;
+    margin:0;
+    font-size:16px;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif;
+    width:100px;
+    float:left;
+}
+.doc-title {
+    background-color: #5cb85c;
+    height:40px;
+    padding-top: 8px;
+}
+.doc-content table {
+    margin: 0;
+    border:1px solid #ddd;
+    border-top:none;
+}
+.doc-content th{
+    text-align: center;
+    border-bottom: 1px solid #ddd!important;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif;
+ }
+.doc-content td{
+    text-align: center;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif;
+}
+
+.timeSelecter input {
+    padding-left: 12px;
+    width:135px;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif;
+    color:#fff;
+    background-color: #5cb85c;
+    border:2px solid #fff;
+}
+.timeSelecter input:hover {
+    cursor: pointer;
+    color:#5cb85c;
+    background-color: #fff;
+    transition: all 0.15s ease-in-out;
+    font-weight: bold;
+}
+#query-time {
+    font-size:12px;
+    width:50px;
+    height:26px;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif;
+    transition: all 0.15s ease-in-out;
+    background-color: #fff;
+    border:none;
+}
+#query-time:hover {
+    background-color: #e4e4e4;
+}
+
+.choose-patient {
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif;
+    margin-top:40px;
+}
+.choose-box {
+    border:2px solid #ddd;
+    margin-top:10px;
+}
+.choose-box h4{
+    font-size:16px;
+}
+.choose-box:hover {
+    cursor: pointer;
+}
+@media(min-width:768px) {
+    .choose-box {
+        margin-right:10px;
+        margin-top:0;
+        margin-bottom: 10px;
+    }
+}
+.active-choose-box {
+    border:2px solid #4cae4c;
+}
+.sent-sms {
+    margin-top:30px;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif;
+}
+
+.btn-container {
+    margin-top:40px;
+}
+@media ( max-width:768px ) {
+    .btn-container {
+        margin-top:90px;
+    }
+}
+.btn-container>.btn {
+    border-radius: 0;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif;
+    width:150px;
+    font-size:16px;
+    transition: all 0.15s ease-in-out;
+}
+.h4-title {
+    border-left: 3px solid #009e9e;
+    padding-left:10px;
+    margin-bottom:20px;
+}
+.add-patient {
+    margin-top:10px;
+    padding-left:0!important;
+}
+.add-patient:hover {
+    text-decoration:none;
+}
+
+#confirm-mobile {
+    color:#666;
+    font-size:14px;
+}
+
+.intro-content label {
+    display: inline;
+    font-weight: normal;
+}
+@media (max-width:768px) {
+    #rule-container {
+        height:80px;
+    }
+}
+
+@media (min-width:768px) {
+    #success-modal-content {
+        height: 380px;
+        width:600px !important;
+        left: 50%;
+        top: 50%;
+        margin-top: 155px;
+        margin-left: -300px;
+    }
+}

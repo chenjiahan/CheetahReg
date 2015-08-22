@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+body {
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif;
+}
+.feed-container {
+    margin-top:30px;
+    padding: 10px 10px 0;
+    height: 520px;
+    border:1px solid #ddd;
+    border-radius: 8px;
+}
+@media (min-width: 768px) {
+    .feed-container {
+        padding: 0 20px 0;
+        height: 470px;
+    }
+}
+.feed-title h3 {
+    border-bottom :1px solid #1a8fb4;
+    padding-bottom: 10px;
+    color:#1a8fb4;
+    font-size:20px;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif;
+}
+.feed-body {
+    margin-top:20px;
+}
+.feed-body ul {
+    padding: 0;
+    list-style-type: none;
+}
+.feed-body li {
+    margin-top:15px;
+}
+.feed-body .btn {
+    float:right;
+}
+.feed-body textarea {
+    resize: none;
+}

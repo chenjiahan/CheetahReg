@@ -1,0 +1,114 @@
+/*--容器--*/
+.my-container {
+    border: 1px solid #ddd;
+    margin-top: 30px;
+    padding: 15px 0 10px;
+}
+.my-container h3{
+    color: #5CA945;
+    border-bottom: 1px solid #ddd;
+    margin: 0 10px 10px;
+    padding: 10px 0 10px;
+    font-size:22px;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif !important;
+}
+.my-container ul {
+    list-style-type: none;
+    padding: 0 10px 0;
+}
+.right-content li {
+    line-height:30px;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif;
+}
+.right-content li a:hover {
+    text-decoration:none;
+    background-color:#377bee!important;
+}
+.right-content img {
+    width: 220px;
+    height: 90px;
+    margin:30px 25px 0;
+    border:1px solid #ddd;
+}
+
+/*--左侧导航--*/
+.menu{
+    height: 245px;
+    border-right:none;
+}
+@media (min-width: 768px) {
+    .menu{
+        height: 445px;
+    }
+}
+.menu li a{
+    display: block;
+    text-align:center;
+    font-size: 18px;
+    line-height:40px;
+    font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+    color:#5CA945;
+    margin-top: 5px;
+    transition: all 0.15s ease-in-out;
+}
+@media (min-width: 768px) {
+    .menu li a{
+        line-height:50px;
+        margin-top: 10px;
+    }
+}
+.menu li a:hover {
+    text-decoration:none;
+    background-color:#4CA945 ;
+    color:#FFF;
+}
+.active{
+    background-color:#4CA945!important; ;
+    color:#FFF !important;
+}
+.menu span {
+    padding-right:10px;
+}
+
+
+/*--内容栏高度控制--*/
+.about-content {
+    height: 440px;
+}
+@media (min-width: 768px) {
+    .about-content {
+        height: 445px;
+    }
+}
+.contact-content {
+    height: 200px;
+}
+@media (min-width: 768px) {
+    .contact-content {
+        height: 445px;
+    }
+}
+.statement-content {
+    height: 420px;
+}
+@media (min-width: 768px) {
+    .statement-content {
+        height: 445px;
+    }
+}
+.link-content {
+    height: 580px;
+}
+@media (min-width: 768px) {
+    .link-content {
+        height: 445px;
+    }
+}
+.agreement-content {
+    height: 3400px;
+}
+@media (min-width: 768px) {
+    .agreement-content {
+        height: 1760px;
+    }
+}

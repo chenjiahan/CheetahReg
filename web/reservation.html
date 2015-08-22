@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="网上预约挂号系统">
+    <meta name="keywords" content="猎豹挂号网">
+    <title>预约挂号 | 猎豹挂号网</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/reservation.css" />
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link href="./images/favicon.ico" rel="shortcut icon" />
+</head>
+
+<body>
+    <!--顶部-->
+    <script src="base/head.html"></script>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="introduce">
+                    <div class="intro-title">
+                        <h3 id="hospital_name">医院名 -- 科室名</h3>
+                    </div>
+                    <div class="intro-content">
+                        <ul>
+                            <li class="col-md-6"><span>预约周期</span><label id = 'reservation_cycle'></label>天</li>
+                            <li class="col-md-6 right-li"><span>放号时间</span><label id = 'registration_open_time'></label></li>
+                            <li class="col-md-6"><span>停挂时间</span><label id = 'registration_closed_time'></label></li>
+                            <li class="col-md-6 right-li"><span>退号时间</span><label id = 'registration_cancel_deadline'>0</label></li>
+                            <li class="col-md-12" id="rule-container"><span>其他规则</span><label id = 'special_rule'></label></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 doc-list">
+                <div class="doc-title">
+                    <h4>预约日期: </h4>
+                    <span class="timeSelecter">
+                        <input type="text" class="date start" id="select-time"  readonly="readonly" >
+
+                    </span>
+                    <button type="button" id="query-time" class="query-btn">查询</button>
+                </div>
+                <div class="doc-content">
+                    <table class="table table-hover table-condensed" id="reservation-table">
+                        <thead>
+                            <tr>
+                                <th class="col-md-1">时段</th>
+                                <th class="col-md-1">医生</th>
+                                <th class="col-md-1">挂号费</th>
+                                <th class="col-md-1">可挂号</th>
+                                <th class="col-md-1">剩余号</th>
+                                <th class="col-md-1">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--底部-->
+    <script src="base/foot.html"></script>
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="./js/jquery.timepicker.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/app.js"></script>
+    <script type="text/javascript" src="js/jquery.form.js"></script>
+    <script>
+        //存储table信息
+        var reserve_obj = null;
+
+        $(document).ready(function(){
+            //初始化时间选择器
+            $('.timeSelecter .date').datepicker({
+                'format': 'yyyy年mm月dd日',
+                'autoclose': true
+            });
+
+            //设置当前日期
+            var date = new Date();
+            var now = '';
+            now = date.getFullYear()+"年";
+            now = now + (date.getMonth()+1)+"月";
+            now = now + date.getDate()+"日";
+            var select_input = document.getElementById('select-time');
+            select_input.value = now;
+
+            //获取科室id
+            var url = window.location.href;
+            var department_id = url.split("?")[1].split("=")[1];
+            var select_date = document.getElementById('select-time').value;
+
+            //获取医院和科室的基本信息
+            callAjax(baseUrlCjh()+"departmentInfo/","post",{department_id:department_id},function(data){
+                var obj= eval(data);
+                $('#reservation_cycle').html(obj.reservation_cycle);
+                $('#registration_open_time').html(obj.registration_open_time);
+                $('#registration_closed_time').html(obj.registration_closed_time);
+                $('#registration_cancel_deadline').html(obj.registration_cancel_deadline);
+                $('#special_rule').html(obj.special_rule);
+                $('#hospital_name').html(obj.hospital_name + " -- " + obj.department_name);
+            });
+            //更新table
+            refresh_table();
+        });
+
+        //预约按钮点击事件
+        function reservation_btn_onclick(id) {
+            callAjax(baseUrlCjh()+"isUserLoggedIn/","get",{},function(data){
+                var obj= eval(data);
+                var reservation_number_id = id.replace("reservation_number","");
+                var department_id = null;
+                var reserve_date = null;
+                var i_number = null;
+
+                if ( obj.loggedIn == '1' ) {
+                    for (var i = 0; i < reserve_obj.length;i++ ){
+                        if (reserve_obj[i].reservation_number_info_id = reservation_number_id ) {
+                            department_id = reserve_obj[i].department_id;
+                            reserve_date = reserve_obj[i].date;
+                            i_number = i;
+                        }
+                    }
+                    callAjax(baseUrlCjh()+"doReserve/","get",{reservationNumberInfoId:reservation_number_id},function(data){
+                        var obj= eval(data);
+                         if (obj.success == '1' ) {
+                            alert(obj.message);
+                            window.location = 'confirmReservation.html?department_id=' + department_id + "&date=" + reserve_date + "&number=" + i_number + '&reservationId=' + obj.reservationId +'&phoneNumber='+obj.phoneNumber ;
+                        } else {
+                            alert(obj.message);
+                        }
+                    });
+                } else {
+                    alert("请先登录！");
+                }
+            });
+        }
+
+        //更新table
+        function refresh_table() {
+            //获取科室id
+            var url = window.location.href;
+            var department_id = url.split("?")[1].split("=")[1];
+            var select_date = document.getElementById('select-time').value;
+            select_date=select_date.replace("年","-");
+            select_date=select_date.replace("月","-");
+            select_date=select_date.replace("日","");
+            callAjax(baseUrlCjh()+"reservationNumberInfo/","post",{department_id:department_id, date:select_date},function(data){
+                var obj= eval(data);
+                reserve_obj = obj;
+                var len = obj.length;
+                //清空table
+                var tb = document.getElementById('reservation-table');
+                var rowNum = tb.rows.length;
+                for (i=1;i<rowNum;i++) {
+                    tb.deleteRow(rowNum-i);
+                }
+
+                //添加数据
+                for( var i = 0; i < len; i++ ) {
+                    var table = document.getElementById('reservation-table');
+                    var newTr = table.insertRow();
+                    //添加列
+                    var newTd0 = newTr.insertCell();
+                    var newTd1 = newTr.insertCell();
+                    var newTd2 = newTr.insertCell();
+                    var newTd3 = newTr.insertCell();
+                    var newTd4 = newTr.insertCell();
+                    var newTd5 = newTr.insertCell();
+                    //设置列内容和属性
+                    if ( obj[i].time_interval == '08:30:00 - 11:30:00') {
+                        newTd0.innerText= "上午";
+                    } else {
+                        newTd0.innerText= "下午";
+                    }
+                    newTd1.innerText= obj[i].level;
+                    newTd2.innerText= obj[i].reservation_fee + "元";
+                    newTd3.innerText= obj[i].total_number;
+                    newTd4.innerText= obj[i].remain_number;
+                    if ( obj[i].remain_number != 0 ) {
+                        newTd5.innerHTML = '<a href="#" class="reservation-btn" id="'+ "reservation_number"+ obj[i].reservation_number_info_id +  '" onclick="reservation_btn_onclick(this.id);">预约</a>';
+                    } else {
+                        newTd5.innerText= '已满';
+                    }
+                }
+            });
+        }
+
+        //查询按钮点击事件
+        $('#query-time').click(function(){
+            refresh_table();
+        });
+    </script>
+</body>
+</html>

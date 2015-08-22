@@ -1,0 +1,92 @@
+body,p{
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif;
+}
+
+/*共找到几家医院*/
+#tip {
+    margin:30px  0 5px  -15px ;
+    height:30px;
+    font-size:0.9em;
+    color:#888;
+    border-bottom: 1px solid #3d9ee9;
+}
+
+/*医院信息*/
+.hospital-box {
+    padding: 2px 1px 1px 1px;
+    border:1px solid #d5d5d5;
+    /*border-top:none;*/
+    /*height:125px;*/
+}
+.hospital-box:hover {
+    padding: 0;
+    border:2px solid #3d9ee9;
+}
+.hospital-box .img  img {
+    float :left;
+    height: 120px ;
+    width:180px;
+    margin-left:-5px;
+    border:none;
+}
+@media (max-width: 768px) {
+    .hospital-box .img {
+        display:none;
+    }
+}
+.hospital-box .order button{
+    margin:40px 0 0 0;
+    padding:10px  30px;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif;
+    font-size:14px;
+    width:90px;
+    border-radius: 2px;
+    border:none;
+    background-color: #377bee;
+    transition: all 0.15s ease-in-out;
+}
+.hospital-box .order button:hover{
+    background-color: #3071a9;
+    border:none;
+}
+.hospital-box  .message{
+    padding-top:15px;
+    margin-left:-70px;
+}
+@media (max-width:768px){
+    .hospital-box .message{
+        margin-left:5px;
+    }
+}
+.hospital-box   .message a{
+    font-size:20px;
+    padding-top:15px;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","微软雅黑","宋体",Arial,Verdana,sans-serif;
+}
+.hospital-box   .message a:hover{
+    text-decoration: none;
+}
+.hospital-box  .message .ss{
+    margin-left:30px;
+    background-color:#FFDCB9 ;
+    color:#EA7500 ;
+    padding:3px 10px;
+    font-size: 12px;
+}
+@media (max-width: 768px) {
+    .hospital-box .message .ss {
+        margin-left:5px;
+    }
+}
+.hospital-box  .message .tel{
+    margin-left:5px;
+}
+.hospital-box  .message .address{
+    margin-left:5px;
+}
+.hospital-box  .message p  {
+    font-size: 13px;
+    margin-top:10px;
+}
+
+
